@@ -6,6 +6,7 @@ export default function Home() {
     <div className="min-h-screen">
       <Navbar />
       {/* <Resume /> */}
+      <h1>Hello</h1>
     </div>
   );
 }

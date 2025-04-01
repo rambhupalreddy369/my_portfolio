@@ -6,42 +6,66 @@ import { Button } from "primereact/button";
 import { Avatar } from "primereact/avatar";
 import { ThemeContext } from "../../../../context/ThemeContext";
 import { FaMoon, FaSun } from "react-icons/fa";
+import { Menubar } from "primereact/menubar";
 
 export default function Header() {
   const { theme, toggleTheme } = useContext(ThemeContext);
-
+  const items = [
+    {
+      label: "Home",
+      icon: "pi pi-home",
+    },
+    {
+      label: "Features",
+      icon: "pi pi-star",
+    },
+    {
+      label: "Projects",
+      icon: "pi pi-search",
+      items: [
+        {
+          label: "Components",
+          icon: "pi pi-bolt",
+        },
+        {
+          label: "Blocks",
+          icon: "pi pi-server",
+        },
+        {
+          label: "UI Kit",
+          icon: "pi pi-pencil",
+        },
+        {
+          label: "Templates",
+          icon: "pi pi-palette",
+          items: [
+            {
+              label: "Apollo",
+              icon: "pi pi-palette",
+            },
+            {
+              label: "Ultima",
+              icon: "pi pi-palette",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      label: "Contact",
+      icon: "pi pi-envelope",
+    },
+    {
+      label: theme === "light" ? "Light" : "Dark",
+      icon: theme === "light" ? "pi pi-moon" : "pi pi-sun",
+      command: () => toggleTheme(),
+    },
+  ];
   const endContent = (
-    <div className="flex flex-wrap align-items-center gap-3">
-      <button className="p-link inline-flex justify-content-center align-items-center text-white h-3rem w-3rem border-circle hover:bg-white-alpha-10 transition-all transition-duration-200">
-        <i className="pi pi-home text-2xl"></i>
-      </button>
-      <button className="p-link inline-flex justify-content-center align-items-center text-white h-3rem w-3rem border-circle hover:bg-white-alpha-10 transition-all transition-duration-200">
-        <i className="pi pi-user text-2xl"></i>
-      </button>
-      <button className="p-link inline-flex justify-content-center align-items-center text-white h-3rem w-3rem border-circle hover:bg-white-alpha-10 transition-all transition-duration-200">
-        <i className="pi pi-search text-2xl"></i>
-      </button>
-      <button
-        className="p-link inline-flex justify-content-center align-items-center text-white h-3rem w-3rem border-circle hover:bg-white-alpha-10 transition-all transition-duration-200"
-        onClick={toggleTheme}
-      >
-        {theme === "light" ? (
-          <i className=" text-2xl">
-            <FaMoon />
-          </i>
-        ) : (
-          <i className=" text-2xl">
-            {" "}
-            <FaSun />
-          </i>
-        )}
-      </button>
-      {/* <Button
-        icon={theme === "light" ? <FaMoon /> : <FaSun />}
-        onClick={toggleTheme}
-        className="p-button-rounded p-button-secondary"
-      /> */}
-    </div>
+    <Menubar
+      model={items}
+      style={{ backgroundColor: "transparent", border: "none" }}
+    />
   );
 
   const startContent = (

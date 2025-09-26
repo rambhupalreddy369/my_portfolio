@@ -213,20 +213,20 @@ export default function Portfolio() {
               <div className="flex flex-col lg:flex-row items-center gap-8">
                 <div className="flex-shrink-0">
                   <img
-                    src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop"
+                    src=""
                     alt="Profile"
                     className="w-48 h-48 rounded-full object-cover border-4 border-blue-500 shadow-xl"
                   />
                 </div>
                 <div className="flex-1">
-                  <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-                    John Doe
+                  <h1 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white mb-2">
+                    Rambhupal Reddy Kancharla
                   </h1>
-                  <p className="text-xl text-blue-600 dark:text-blue-400 mb-6">
-                    Full Stack Developer & UI/UX Designer
+                  <p className="text-xl text-blue-600 dark:text-blue-400 mb-4">
+                    Full Stack Developer
                   </p>
                   <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed mb-6">
-                    I'm a passionate full-stack developer with 5+ years of
+                    I'm a passionate full-stack developer with 3+ years of
                     experience creating beautiful, functional, and user-centered
                     digital experiences. I love solving complex problems and
                     learning new technologies.

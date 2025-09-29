@@ -24,11 +24,11 @@ export default function SidebarMenu({
   closeSidebar,
 }: SidebarMenuProps) {
   const menuItems = [
-    { label: "ABOUT", icon: <User size={20} />, href: "#", active: true },
-    { label: "PROJECTS", icon: <Briefcase size={20} />, href: "#" },
-    { label: "BLOG", icon: <PenTool size={20} />, href: "#" },
-    { label: "RESUME", icon: <FileText size={20} />, href: "#" },
-    { label: "CONTACT", icon: <MessageCircle size={20} />, href: "#" },
+    { label: "ABOUT", icon: <User size={20} />, href: "/", active: true },
+    { label: "PROJECTS", icon: <Briefcase size={20} />, href: "/" },
+    { label: "BLOG", icon: <PenTool size={20} />, href: "/" },
+    { label: "RESUME", icon: <FileText size={20} />, href: "/" },
+    { label: "CONTACT", icon: <MessageCircle size={20} />, href: "/" },
   ];
 
   return (

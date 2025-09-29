@@ -1,11 +1,11 @@
 "use client";
 import * as React from "react";
 import Header from "@/components/Header";
-import SidebarMenu from "@/components/sidebar";
+import SidebarMenu from "@/components/SidebarMenu";
 
 function ClientLayout({ children }: { children: React.ReactNode }) {
   const [isSidebarOpen, setSidebarOpen] = React.useState(false);
-
+  console.log(children);
   return (
     <>
       <Header

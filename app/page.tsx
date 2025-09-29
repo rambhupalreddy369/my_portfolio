@@ -62,28 +62,28 @@ export default function Portfolio() {
   ];
 
   const projects = [
-    {
-      id: 1,
-      title: "E-Commerce Platform",
-      description:
-        "A full-stack e-commerce solution built with React, Node.js, and MongoDB. Features include user authentication, payment processing, and admin dashboard.",
-      image:
-        "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=600",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-      liveUrl: "#",
-      githubUrl: "#",
-    },
-    {
-      id: 2,
-      title: "Task Management App",
-      description:
-        "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-      image:
-        "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600",
-      technologies: ["Vue.js", "Firebase", "Tailwind CSS"],
-      liveUrl: "#",
-      githubUrl: "#",
-    },
+    // {
+    //   id: 1,
+    //   title: "E-Commerce Platform",
+    //   description:
+    //     "A full-stack e-commerce solution built with React, Node.js, and MongoDB. Features include user authentication, payment processing, and admin dashboard.",
+    //   image:
+    //     "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=600",
+    //   technologies: ["React", "Node.js", "MongoDB", "Stripe"],
+    //   liveUrl: "#",
+    //   githubUrl: "#",
+    // },
+    // {
+    //   id: 2,
+    //   title: "Task Management App",
+    //   description:
+    //     "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
+    //   image:
+    //     "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600",
+    //   technologies: ["Vue.js", "Firebase", "Tailwind CSS"],
+    //   liveUrl: "#",
+    //   githubUrl: "#",
+    // },
     {
       id: 3,
       title: "Weather Dashboard",

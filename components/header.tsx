@@ -9,7 +9,6 @@ type HeaderProps = {
   isSidebarOpen: boolean;
   toggleSidebar: () => void;
 };
-
 export default function Header({ isSidebarOpen, toggleSidebar }: HeaderProps) {
   const [mounted, setMounted] = React.useState(false);
   const { theme, setTheme } = useTheme();

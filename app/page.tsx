@@ -37,62 +37,12 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useTheme } from "next-themes";
 import ProfileCard from "@/components/profile/profileCard";
-
-// // Theme Toggle Component
-// function ThemeToggle() {
-//   const [mounted, setMounted] = useState(false);
-//   const { theme, setTheme } = useTheme();
-
-//   useEffect(() => {
-//     setMounted(true);
-//   }, []);
-
-//   if (!mounted) {
-//     return <div className="w-12 h-6 bg-gray-300 rounded-full" />;
-//   }
-
-//   return (
-//     <button
-//       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-//       className="relative w-12 h-6 bg-gray-300 dark:bg-gray-600 rounded-full p-1 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-//       aria-label="Toggle theme"
-//     >
-//       <div
-//         className={`w-4 h-4 bg-white rounded-full shadow-md transform transition-transform duration-300 ${
-//           theme === "dark" ? "translate-x-0" : "translate-x-6"
-//         }`}
-//       >
-//         <div className="flex items-center justify-center h-full">
-//           {theme === "dark" ? (
-//             <svg
-//               className="w-2 h-2 text-gray-600"
-//               fill="currentColor"
-//               viewBox="0 0 20 20"
-//             >
-//               <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-//             </svg>
-//           ) : (
-//             <svg
-//               className="w-2 h-2 text-gray-600"
-//               fill="currentColor"
-//               viewBox="0 0 20 20"
-//             >
-//               <path
-//                 fillRule="evenodd"
-//                 d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-//                 clipRule="evenodd"
-//               />
-//             </svg>
-//           )}
-//         </div>
-//       </div>
-//     </button>
-//   );
-// }
+import SidebarMenu from "@/components/SidebarMenu";
+import Header from "@/components/Header";
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("about");
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
 
   const navigation = [
     { id: "about", icon: User, label: "About Me" },
@@ -205,6 +155,7 @@ export default function Portfolio() {
   ];
 
   const renderContent = () => {
+    console.log(activeSection);
     switch (activeSection) {
       case "about":
         return (
@@ -629,140 +580,29 @@ export default function Portfolio() {
         return null;
     }
   };
-
-  // return (
-  //   <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
-  //     <div className="flex">
-  //       {/* Desktop Sidebar */}
-  //       <aside className="hidden lg:flex flex-col w-64 bg-white dark:bg-gray-800 shadow-lg border-r border-gray-200 dark:border-gray-700 fixed h-full z-30">
-  //         <div className="p-6 border-b border-gray-200 dark:border-gray-700">
-  //           <div className="flex items-center justify-between">
-  //             <h1 className="text-xl font-bold text-gray-900 dark:text-white">
-  //               Portfolio
-  //             </h1>
-  //             {/* <ThemeToggle /> */}
-  //           </div>
-  //         </div>
-
-  //         <nav className="flex-1 p-4">
-  //           <ul className="space-y-2">
-  //             {navigation.map(({ id, icon: Icon, label }) => (
-  //               <li key={id}>
-  //                 <button
-  //                   onClick={() => setActiveSection(id)}
-  //                   className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left transition-colors ${
-  //                     activeSection === id
-  //                       ? "bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300"
-  //                       : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
-  //                   }`}
-  //                 >
-  //                   <Icon className="w-5 h-5" />
-  //                   {label}
-  //                 </button>
-  //               </li>
-  //             ))}
-  //           </ul>
-  //         </nav>
-
-  //         <div className="p-4 border-t border-gray-200 dark:border-gray-700">
-  //           <div className="flex justify-center gap-3">
-  //             <Button size="sm" variant="outline" asChild>
-  //               <a href="#">
-  //                 <Github className="w-4 h-4" />
-  //               </a>
-  //             </Button>
-  //             <Button size="sm" variant="outline" asChild>
-  //               <a href="#">
-  //                 <Linkedin className="w-4 h-4" />
-  //               </a>
-  //             </Button>
-  //             <Button size="sm" variant="outline" asChild>
-  //               <a href="#">
-  //                 <Twitter className="w-4 h-4" />
-  //               </a>
-  //             </Button>
-  //           </div>
-  //         </div>
-  //       </aside>
-
-  //       {/* Mobile Sidebar */}
-  //       <aside
-  //         className={`lg:hidden fixed left-0 top-0 bottom-0 w-64 bg-white dark:bg-gray-800 shadow-lg z-50 transform transition-transform duration-300 ${
-  //           sidebarOpen ? "translate-x-0" : "-translate-x-full"
-  //         }`}
-  //       >
-  //         <div className="p-6 border-b border-gray-200 dark:border-gray-700">
-  //           <div className="flex items-center justify-between">
-  //             <h1 className="text-xl font-bold text-gray-900 dark:text-white">
-  //               Portfolio
-  //             </h1>
-  //             <Button
-  //               variant="ghost"
-  //               size="sm"
-  //               onClick={() => setSidebarOpen(false)}
-  //             >
-  //               <X className="w-5 h-5" />
-  //             </Button>
-  //           </div>
-  //         </div>
-
-  //         <nav className="flex-1 p-4">
-  //           <ul className="space-y-2">
-  //             {navigation.map(({ id, icon: Icon, label }) => (
-  //               <li key={id}>
-  //                 <button
-  //                   onClick={() => {
-  //                     setActiveSection(id);
-  //                     setSidebarOpen(false);
-  //                   }}
-  //                   className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg text-left transition-colors ${
-  //                     activeSection === id
-  //                       ? "bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300"
-  //                       : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
-  //                   }`}
-  //                 >
-  //                   <Icon className="w-5 h-5" />
-  //                   {label}
-  //                 </button>
-  //               </li>
-  //             ))}
-  //           </ul>
-  //         </nav>
-  //       </aside>
-
-  //       {/* Main Content */}
-  //       <div className="flex-1 lg:ml-64">
-  //         {/* Mobile Header */}
-  //         <header className="lg:hidden bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700 sticky top-0 z-20">
-  //           <div className="flex items-center justify-between p-4">
-  //             <Button
-  //               variant="ghost"
-  //               size="sm"
-  //               onClick={() => setSidebarOpen(true)}
-  //             >
-  //               <Menu className="w-5 h-5" />
-  //             </Button>
-  //             <h1 className="text-lg font-semibold text-gray-900 dark:text-white">
-  //               Portfolio
-  //             </h1>
-  //             {/* <ThemeToggle /> */}
-  //           </div>
-  //         </header>
-
-  //         {/* Page Content */}
-  //         <main className="p-6 lg:p-8">
-  //           <div className="max-w-4xl mx-auto">{renderContent()}</div>
-  //         </main>
-  //       </div>
-  //     </div>
-
-  //     {/* Mobile overlay */}
-  //     {sidebarOpen && (
-  //       <div
-  //         className="fixed inset-0 bg-black/50 lg:hidden z-40"
-  //         onClick={() => setSidebarOpen(false)}
-  //       />
-  //     )}
-  //   </div>
-  // );
+  const handleChildAction = (value: string) => {
+    setActiveSection(value);
+  };
+  return (
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+      <Header
+        isSidebarOpen={isSidebarOpen}
+        toggleSidebar={() => setSidebarOpen((prev) => !prev)}
+      ></Header>
+      <div className="flex">
+        <SidebarMenu
+          isOpen={isSidebarOpen}
+          closeSidebar={() => setSidebarOpen(false)}
+          activeSection={handleChildAction}
+        ></SidebarMenu>
+        {/* Main Content */}
+        <div className="flex-1 lg:ml-64">
+          {/* Page Content */}
+          <main className="p-6 lg:p-8">
+            <div className="max-w-4xl mx-auto">{renderContent()}</div>
+          </main>
+        </div>
+      </div>
+    </div>
+  );
 }

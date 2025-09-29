@@ -17,18 +17,33 @@ import {
 type SidebarMenuProps = {
   isOpen: boolean;
   closeSidebar: () => void;
+  activeSection: (id: string) => void;
 };
 
 export default function SidebarMenu({
   isOpen,
   closeSidebar,
+  activeSection,
 }: SidebarMenuProps) {
   const menuItems = [
-    { label: "ABOUT", icon: <User size={20} />, href: "/", active: true },
-    { label: "PROJECTS", icon: <Briefcase size={20} />, href: "/" },
-    { label: "BLOG", icon: <PenTool size={20} />, href: "/" },
-    { label: "RESUME", icon: <FileText size={20} />, href: "/" },
-    { label: "CONTACT", icon: <MessageCircle size={20} />, href: "/" },
+    {
+      id: "about",
+      label: "ABOUT",
+      icon: <User size={20} />,
+      active: true,
+    },
+    {
+      id: "projects",
+      label: "PROJECTS",
+      icon: <Briefcase size={20} />,
+    },
+    { id: "blog", label: "BLOG", icon: <PenTool size={20} /> },
+    { id: "resume", label: "RESUME", icon: <FileText size={20} /> },
+    {
+      id: "contact",
+      label: "CONTACT",
+      icon: <MessageCircle size={20} />,
+    },
   ];
 
   return (
@@ -40,10 +55,10 @@ export default function SidebarMenu({
         }`}
       >
         <nav className="flex flex-col items-center gap-6 mt-10">
-          {menuItems.map((item, idx) => (
-            <a
-              key={idx}
-              href={item.href}
+          {menuItems.map((item, id) => (
+            <button
+              key={id}
+              onClick={() => activeSection(item.id)}
               className={`flex flex-col items-center gap-1 text-sm font-semibold transition ${
                 item.active
                   ? "text-red-500"
@@ -52,7 +67,7 @@ export default function SidebarMenu({
             >
               {item.icon}
               {item.label}
-            </a>
+            </button>
           ))}
         </nav>
         <button

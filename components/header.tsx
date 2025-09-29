@@ -5,8 +5,12 @@ import { Menu, Sun, Moon, X, Github, Linkedin } from "lucide-react";
 import { FaXTwitter, FaStackOverflow, FaMedium } from "react-icons/fa6";
 import { useTheme } from "next-themes";
 
-export default function Header() {
-  const [darkMode, setDarkMode] = React.useState(false);
+type HeaderProps = {
+  isSidebarOpen: boolean;
+  toggleSidebar: () => void;
+};
+
+export default function Header({ isSidebarOpen, toggleSidebar }: HeaderProps) {
   const [mounted, setMounted] = React.useState(false);
   const { theme, setTheme } = useTheme();
 
@@ -23,7 +27,10 @@ export default function Header() {
       {/* Left Section */}
       <div className="flex items-center gap-4">
         {/* Menu Icon */}
-        <button className="p-2 text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white">
+        <button
+          onClick={toggleSidebar}
+          className="p-2 text-gray-700 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white"
+        >
           <Menu size={24} />
         </button>
 

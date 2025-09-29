@@ -1,107 +1,85 @@
+// components/SidebarMenu.tsx
 "use client";
 
+import { useState, useEffect } from "react";
 import {
+  Menu,
+  X,
   User,
   Briefcase,
   PenTool,
   FileText,
   MessageCircle,
-  X,
+  Sun,
+  Moon,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
-interface SidebarProps {
+type SidebarMenuProps = {
   isOpen: boolean;
-  onClose: () => void;
-}
+  closeSidebar: () => void;
+};
 
-export default function Sidebar({ isOpen, onClose }: SidebarProps) {
-  const navigation = [
-    { icon: User, label: "ABOUT", href: "#", active: false },
-    { icon: Briefcase, label: "PROJECTS", href: "#", active: true },
-    { icon: PenTool, label: "BLOG", href: "#", active: false },
-    { icon: FileText, label: "RESUME", href: "#", active: false },
-    { icon: MessageCircle, label: "CONTACT", href: "#", active: false },
+export default function SidebarMenu({
+  isOpen,
+  closeSidebar,
+}: SidebarMenuProps) {
+  const menuItems = [
+    { label: "ABOUT", icon: <User size={20} />, href: "#", active: true },
+    { label: "PROJECTS", icon: <Briefcase size={20} />, href: "#" },
+    { label: "BLOG", icon: <PenTool size={20} />, href: "#" },
+    { label: "RESUME", icon: <FileText size={20} />, href: "#" },
+    { label: "CONTACT", icon: <MessageCircle size={20} />, href: "#" },
   ];
 
   return (
-    <>
-      {/* Desktop Sidebar */}
-      <aside className="hidden lg:flex flex-col w-20 bg-slate-800/50 dark:bg-slate-800/50 light:bg-white/80 backdrop-blur-md border-r border-slate-700/50 dark:border-slate-700/50 light:border-slate-200/80 transition-all duration-300">
-        <nav className="flex-1 flex flex-col items-center py-8 gap-8">
-          {navigation.map(({ icon: Icon, label, href, active }) => (
-            <a
-              key={label}
-              href={href}
-              className={`group relative flex flex-col items-center gap-2 p-3 rounded-xl transition-all duration-200 ${
-                active
-                  ? "bg-blue-500/20 text-blue-400"
-                  : "text-slate-400 dark:text-slate-400 light:text-slate-600 hover:text-white dark:hover:text-white light:hover:text-slate-900 hover:bg-slate-700/50 dark:hover:bg-slate-700/50 light:hover:bg-slate-100/80"
-              }`}
-            >
-              <Icon className="h-6 w-6" />
-              <span className="text-[10px] font-medium tracking-wider">
-                {label}
-              </span>
-
-              {/* Active indicator */}
-              {active && (
-                <div className="absolute -right-3 top-1/2 -translate-y-1/2 w-1 h-8 bg-blue-400 rounded-l-full" />
-              )}
-            </a>
-          ))}
-        </nav>
-
-        {/* Close button at bottom for desktop (matches screenshot) */}
-        <div className="p-4">
-          <Button
-            variant="ghost"
-            size="sm"
-            className="text-slate-400 dark:text-slate-400 light:text-slate-600 hover:text-white dark:hover:text-white light:hover:text-slate-900 hover:bg-slate-700/50 dark:hover:bg-slate-700/50 light:hover:bg-slate-100/80 transition-colors duration-200"
-          >
-            <X className="h-5 w-5" />
-          </Button>
-        </div>
-      </aside>
-
-      {/* Mobile Sidebar */}
+    <div className="relative min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors">
+      {/* Sidebar for desktop */}
       <aside
-        className={`lg:hidden fixed left-0 top-0 bottom-0 w-64 bg-slate-900/95 dark:bg-slate-900/95 light:bg-white/95 backdrop-blur-md border-r border-slate-700/50 dark:border-slate-700/50 light:border-slate-200/80 z-50 transform transition-transform duration-300 ${
+        className={`hidden md:flex flex-col fixed left-0 top-0 h-full w-52 bg-white dark:bg-gray-800 shadow-lg transition-transform duration-300 ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        <div className="flex items-center justify-between p-4 border-b border-slate-700/50 dark:border-slate-700/50 light:border-slate-200/80">
-          <h2 className="text-lg font-semibold text-white dark:text-white light:text-slate-900">
-            Navigation
-          </h2>
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={onClose}
-            className="text-slate-400 dark:text-slate-400 light:text-slate-600 hover:text-white dark:hover:text-white light:hover:text-slate-900 hover:bg-slate-700/50 dark:hover:bg-slate-700/50 light:hover:bg-slate-100/80 transition-colors duration-200"
-          >
-            <X className="h-5 w-5" />
-          </Button>
-        </div>
-
-        <nav className="flex flex-col p-4 gap-2">
-          {navigation.map(({ icon: Icon, label, href, active }) => (
+        <nav className="flex flex-col items-center gap-6 mt-10">
+          {menuItems.map((item, idx) => (
             <a
-              key={label}
-              href={href}
-              onClick={onClose}
-              className={`flex items-center gap-4 p-4 rounded-xl transition-all duration-200 ${
-                active
-                  ? "bg-blue-500/20 text-blue-400"
-                  : "text-slate-400 dark:text-slate-400 light:text-slate-600 hover:text-white dark:hover:text-white light:hover:text-slate-900 hover:bg-slate-700/50 dark:hover:bg-slate-700/50 light:hover:bg-slate-100/80"
+              key={idx}
+              href={item.href}
+              className={`flex flex-col items-center gap-1 text-sm font-semibold transition ${
+                item.active
+                  ? "text-red-500"
+                  : "text-gray-700 dark:text-gray-200 hover:text-red-400"
               }`}
             >
-              <Icon className="h-5 w-5" />
-              <span className="font-medium">{label}</span>
+              {item.icon}
+              {item.label}
             </a>
           ))}
         </nav>
+        <button
+          onClick={closeSidebar}
+          className="mt-auto mb-6 text-gray-400 hover:text-gray-600"
+        >
+          <X size={28} />
+        </button>
       </aside>
-    </>
+
+      {/* Footer menu for mobile */}
+      <footer className="fixed bottom-0 left-0 w-full bg-white dark:bg-gray-800 shadow-inner flex justify-around items-center py-3 md:hidden">
+        {menuItems.map((item, idx) => (
+          <a
+            key={idx}
+            href={item.href}
+            className={`flex flex-col items-center text-xs font-semibold transition ${
+              item.active
+                ? "text-red-500"
+                : "text-gray-700 dark:text-gray-200 hover:text-red-400"
+            }`}
+          >
+            {item.icon}
+            {item.label}
+          </a>
+        ))}
+      </footer>
+    </div>
   );
 }

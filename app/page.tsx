@@ -596,7 +596,7 @@ export default function Portfolio() {
           activeSection={handleChildAction}
         ></SidebarMenu>
         {/* Main Content */}
-        <div className="flex-1 lg:ml-64">
+        <div className="flex-1">
           {/* Page Content */}
           <main className="p-6 lg:p-8">
             <div className="max-w-4xl mx-auto">{renderContent()}</div>

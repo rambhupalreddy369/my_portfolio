@@ -1,7 +1,5 @@
 // components/SidebarMenu.tsx
 "use client";
-
-import { useState, useEffect } from "react";
 import {
   Menu,
   X,
@@ -13,6 +11,7 @@ import {
   Sun,
   Moon,
 } from "lucide-react";
+import * as React from "react";
 
 type SidebarMenuProps = {
   isOpen: boolean;
@@ -45,22 +44,42 @@ export default function SidebarMenu({
       icon: <MessageCircle size={20} />,
     },
   ];
-
+  const [activeId, setActiveId] = React.useState("about");
+  const handleClick = (id: string) => {
+    setActiveId(id);
+    activeSection(id);
+  };
   return (
     <div className="relative min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors">
       {/* Sidebar for desktop */}
-      <aside
-        className={`hidden md:flex flex-col fixed left-0 top-0 h-full w-52 bg-white dark:bg-gray-800 shadow-lg transition-transform duration-300 ${
-          isOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
+      {/* {isOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 z-40"
+          onClick={closeSidebar}
+        />
+      )} */}
+      <div
+        className={`fixed z-50 top-1/2 transform -translate-y-1/2 ml-5 bg-white transition-all duration-300 dark:bg-gray-900 
+          dark:text-gray-100 ${
+            isOpen
+              ? "opacity-100 scale-100"
+              : "opacity-0 scale-95 pointer-events-none"
+          }`}
       >
-        <nav className="flex flex-col items-center gap-6 mt-10">
+        <button
+          onClick={closeSidebar}
+          className="absolute top-3 right-3 text-gray-500 hover:text-gray-700 dark:text-gray-300 dark:hover:text-gray-100"
+        >
+          <X size={22} />
+        </button>
+
+        <nav className="flex flex-col items-center gap-6 p-8">
           {menuItems.map((item, id) => (
             <button
               key={id}
-              onClick={() => activeSection(item.id)}
+              onClick={() => handleClick(item.id)}
               className={`flex flex-col items-center gap-1 text-sm font-semibold transition ${
-                item.active
+                activeId === item.id
                   ? "text-red-500"
                   : "text-gray-700 dark:text-gray-200 hover:text-red-400"
               }`}
@@ -70,22 +89,16 @@ export default function SidebarMenu({
             </button>
           ))}
         </nav>
-        <button
-          onClick={closeSidebar}
-          className="mt-auto mb-6 text-gray-400 hover:text-gray-600"
-        >
-          <X size={28} />
-        </button>
-      </aside>
+      </div>
 
       {/* Footer menu for mobile */}
       <footer className="fixed bottom-0 left-0 w-full bg-white dark:bg-gray-800 shadow-inner flex justify-around items-center py-3 md:hidden">
         {menuItems.map((item, idx) => (
           <a
             key={idx}
-            href={item.href}
+            onClick={() => handleClick(item.id)}
             className={`flex flex-col items-center text-xs font-semibold transition ${
-              item.active
+              activeId === item.id
                 ? "text-red-500"
                 : "text-gray-700 dark:text-gray-200 hover:text-red-400"
             }`}

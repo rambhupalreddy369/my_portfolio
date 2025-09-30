@@ -60,7 +60,7 @@ const Contact = () => {
           </CardContent>
         </Card> */}
 
-        <Card>
+        <Card className="dark:bg-[#1e2738]">
           <CardHeader>
             <CardTitle>Send Message</CardTitle>
           </CardHeader>
@@ -69,26 +69,40 @@ const Contact = () => {
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium mb-2">Name</label>
-                  <Input placeholder="Your name" />
+                  <Input
+                    placeholder="Your name"
+                    className="dark:bg-[#273248] dark:border-[#273248]"
+                  />
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-2">
                     Email
                   </label>
-                  <Input type="email" placeholder="your.email@example.com" />
+                  <Input
+                    type="email"
+                    placeholder="your.email@example.com"
+                    className="dark:bg-[#273248] dark:border-[#273248]"
+                  />
                 </div>
               </div>
               <div>
                 <label className="block text-sm font-medium mb-2">
                   Subject
                 </label>
-                <Input placeholder="Message subject" />
+                <Input
+                  placeholder="Message subject"
+                  className="dark:bg-[#273248] dark:border-[#273248]"
+                />
               </div>
               <div>
                 <label className="block text-sm font-medium mb-2">
                   Message
                 </label>
-                <Textarea placeholder="Your message..." rows={5} />
+                <Textarea
+                  placeholder="Your message..."
+                  rows={5}
+                  className="dark:bg-[#273248] dark:border-[#273248]"
+                />
               </div>
               <Button className="w-full bg-blue-600 hover:bg-blue-700">
                 <Send className="w-4 h-4 mr-2" />

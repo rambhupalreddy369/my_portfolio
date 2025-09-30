@@ -10,6 +10,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import Image from "next/image";
 
 const projects = [
   // {
@@ -65,10 +66,12 @@ const Projects = () => {
           <Card key={project.id} className="overflow-hidden">
             <div className="md:flex">
               <div className="md:w-1/3">
-                <img
+                <Image
                   src={project.image}
                   alt={project.title}
                   className="w-full h-48 md:h-full object-cover"
+                  width={400}
+                  height={300}
                 />
               </div>
               <div className="md:w-2/3 p-6">

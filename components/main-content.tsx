@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import ProjectCard from "@/components/project-card";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export default function MainContent() {
   const projects = [
@@ -36,8 +37,8 @@ export default function MainContent() {
           {/* Profile Image */}
           <div className="mb-8">
             <div className="relative w-32 h-32 mx-auto mb-6">
-              <img
-                src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&fit=crop"
+              <Image
+                src=""
                 alt="Profile"
                 className="w-full h-full object-cover rounded-full border-4 border-slate-600/50 dark:border-slate-600/50 light:border-slate-300/80 shadow-2xl transition-colors duration-300"
               />

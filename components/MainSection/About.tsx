@@ -4,6 +4,7 @@ import { Briefcase, Code, FileText, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import ProfileCard from "@/components/profile/profileCard";
+import Image from "next/image";
 
 const About = () => {
   const experience = [
@@ -40,22 +41,23 @@ const About = () => {
 
   return (
     <div>
-      <ProfileCard
+      {/* <ProfileCard
         name="Rambhupal Reddy"
-        image="/daniel.jpg"
+        image=""
         description="Hi! I’m a Senior Developer with more than ten years of experience working in mobile banking apps."
         resumeLink="/resume-daniel.pdf"
+
         // highlightLinks={[
         //   { label: "latest projects", href: "/projects" },
         //   { label: "case studies", href: "/case-studies" },
         // ]}
-      ></ProfileCard>
+      ></ProfileCard> */}
       <div className="space-y-8">
         {/* Hero Section */}
         <div className="text-center lg:text-left">
           <div className="flex flex-col lg:flex-col items-center gap-8">
             <div className="flex-shrink-0">
-              <img
+              <Image
                 src=""
                 alt="Profile"
                 className="w-48 h-48 rounded-full object-cover border-4 border-blue-500 shadow-xl"

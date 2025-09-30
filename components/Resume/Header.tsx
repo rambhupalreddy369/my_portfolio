@@ -27,12 +27,12 @@ const Header: React.FC<HeaderProps> = ({ name, title, contact }) => {
       <h1 className="text-2xl md:text-3xl font-bold text-custom-text dark:text-white mb-1">
         {name}
       </h1>
-      <p className="text-base md:text-lg text-gray-600 dark:text-white mb-2">
+      <p className="text-base md:text-lg text-gray-600 dark:text-white mb-3">
         {title}
       </p>
       <hr className="border-gray-300 dark:border-gray-700 mb-2" />
-      <div className="flex justify-between mt-2 text-sm text-gray-500 dark:text-white mb-3 px-10 md:px-1">
-        <span>{contact.phone}</span>
+      <div className="flex justify-around mt-2 text-sm text-gray-500 dark:text-white mb-3">
+        <div>{contact.phone}</div>
         <span>{contact.email}</span>
         <span>{contact.website}</span>
       </div>

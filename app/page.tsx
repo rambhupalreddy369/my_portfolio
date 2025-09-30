@@ -44,6 +44,7 @@ export default function Portfolio() {
       <Header
         isSidebarOpen={isSidebarOpen}
         toggleSidebar={() => setSidebarOpen((prev) => !prev)}
+        activeSection={handleChildAction}
       ></Header>
       <div className="flex">
         <SidebarMenu

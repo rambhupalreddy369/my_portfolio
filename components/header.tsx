@@ -8,8 +8,13 @@ import { useTheme } from "next-themes";
 type HeaderProps = {
   isSidebarOpen: boolean;
   toggleSidebar: () => void;
+  activeSection: (id: string) => void;
 };
-export default function Header({ isSidebarOpen, toggleSidebar }: HeaderProps) {
+export default function Header({
+  isSidebarOpen,
+  toggleSidebar,
+  activeSection,
+}: HeaderProps) {
   const [mounted, setMounted] = React.useState(false);
   const { theme, setTheme } = useTheme();
 
@@ -63,7 +68,7 @@ export default function Header({ isSidebarOpen, toggleSidebar }: HeaderProps) {
 
       {/* Right Section - Hire Me Button */}
       <a
-        href="/contact"
+        onClick={() => activeSection("contact")}
         className="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-full font-semibold transition"
       >
         Hire Me

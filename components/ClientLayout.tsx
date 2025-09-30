@@ -11,6 +11,7 @@ function ClientLayout({ children }: { children: React.ReactNode }) {
       <Header
         isSidebarOpen={isSidebarOpen}
         toggleSidebar={() => setSidebarOpen((prev) => !prev)}
+        activeSection={() => {}}
       />
       {/* <SidebarMenu
         isOpen={isSidebarOpen}

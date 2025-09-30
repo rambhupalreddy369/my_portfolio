@@ -59,7 +59,7 @@ export default function SidebarMenu({
         />
       )} */}
       <div
-        className={`fixed z-50 top-1/2 transform -translate-y-1/2 ml-5 bg-white transition-all duration-300 dark:bg-gray-900 
+        className={`fixed z-50 top-1/2 transform -translate-y-1/2 ml-5 bg-white transition-all duration-300 dark:bg-[#171c29] 
           dark:text-gray-100 ${
             isOpen
               ? "opacity-100 scale-100"

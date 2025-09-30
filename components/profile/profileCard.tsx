@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 // components/ProfileCard.tsx
 interface ProfileCardProps {
   name: string;
@@ -18,7 +20,7 @@ export default function ProfileCard({
       <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-md p-8 max-w-2xl w-full text-center transition-colors duration-300">
         {/* Profile Image */}
         <div className="flex justify-center -mt-20">
-          <img
+          <Image
             src={image}
             alt={name}
             className="w-28 h-28 rounded-full border-4 border-white dark:border-gray-800 shadow-md object-cover"

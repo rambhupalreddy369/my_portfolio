@@ -12,17 +12,17 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50 text-gray-800 font-sans dark:bg-[#1e2738]">
       <Head>
-        <title>Daniel Lopez - Resume</title>
-        <meta name="description" content="Daniel Lopez's Resume" />
+        <title>Rambhupal - Resume</title>
+        <meta name="description" content="Rambhupal Reddy's Resume" />
       </Head>
       <div className="max-w-4xl mx-auto p-4 sm:p-6">
         <Header
-          name="DANIEL LOPEZ"
-          title="SENIOR APP DEVELOPER"
+          name="Rambhupal Reddy"
+          title="Full Stack Developer"
           contact={{
-            phone: "+123-4567890",
-            email: "hello@yourwebsite.com",
-            website: "www.yourwebsite.com",
+            phone: "+91 84990 15238",
+            email: "rambhupalreddy369@gmail.com",
+            website: "www.kvrbreddy.com",
           }}
         />
         <div className="flex flex-col md:flex-row gap-8">

@@ -5,12 +5,12 @@ interface TechStackProps {
 const TechStack: React.FC<TechStackProps> = ({ skills }) => {
   return (
     <div className="mb-6">
-      <h2 className="text-xl font-semibold mb-2 flex items-center text-custom-text dark:text-custom-text-dark">
+      <h2 className="text-xl font-semibold mb-2 flex items-center text-custom-text dark:text-white">
         <span className="mr-2">⚙️</span> TECH STACK
       </h2>
       {skills.map((skill, index) => (
         <div key={index} className="mb-2">
-          <span className="font-medium text-custom-text dark:text-custom-text-dark">
+          <span className="font-medium text-custom-text dark:text-white">
             {skill}
           </span>
           <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 sm:h-3">

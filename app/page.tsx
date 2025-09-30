@@ -6,8 +6,9 @@ import Header from "@/components/Header";
 import About from "@/components/MainSection/About";
 import Projects from "@/components/MainSection/Projects";
 import BlogPosts from "@/components/MainSection/BlogPosts";
-import Resume from "@/components/MainSection/Resume";
+// import Resume from "@/components/MainSection/Resume";
 import Contact from "@/components/MainSection/Contact";
+import Home from "@/components/Resume/Resume";
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("about");
@@ -26,7 +27,7 @@ export default function Portfolio() {
         return <BlogPosts></BlogPosts>;
 
       case "resume":
-        return <Resume></Resume>;
+        return <Home></Home>;
 
       case "contact":
         return <Contact></Contact>;

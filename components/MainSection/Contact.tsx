@@ -91,7 +91,7 @@ const Contact = () => {
                 </label>
                 <Input
                   placeholder="Message subject"
-                  className="dark:bg-[#273248] dark:border-[#273248]"
+                  className="dark:bg-[#273248] dark:border-[#273248] focus:outline-none focus:ring-0 focus:border-transparent"
                 />
               </div>
               <div>
@@ -101,7 +101,7 @@ const Contact = () => {
                 <Textarea
                   placeholder="Your message..."
                   rows={5}
-                  className="dark:bg-[#273248] dark:border-[#273248]"
+                  className="dark:bg-[#273248] dark:border-[#273248] "
                 />
               </div>
               <Button className="w-full bg-blue-600 hover:bg-blue-700">

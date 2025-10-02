@@ -28,8 +28,12 @@ export default function Home() {
         <div className="flex flex-col md:flex-row gap-8">
           <div className="w-full md:w-2/3">
             <AboutMe
-              summary="Summarise your career profile here lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean commodo ligula eget dolor aenean massa. 
-            Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+              summary="Full-Stack Developer with 3+ years of experience building scalable, 
+            high-performance web applications using Vue.js, Nuxt.js, Vuetify, Vuex, and Firebase. 
+            Skilled in React, Redux, Node.js, and Express.js, with expertise in real-time database integration 
+            and interactive data visualizations. Experienced in debugging, performance optimization, 
+            and delivering seamless user experiences. Strong foundation in problem-solving, collaboration, 
+            and Agile development, with a focus on developing technology-driven solutions that address complex real-world challenges."
             />
             <hr className="my-6 border-gray-300 dark:border-gray-700" />
             <WorkExperience

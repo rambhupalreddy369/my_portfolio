@@ -9,6 +9,11 @@ export const metadata: Metadata = {
   title: "Rambhupal Reddy",
   description:
     "Full Stack Web Developer - Professional portfolio showcasing projects, skills, and experience",
+  icons: {
+    icon: "/favicon-2.png", // default favicon
+    // shortcut: "/favicon-16x16.png",
+    // apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({

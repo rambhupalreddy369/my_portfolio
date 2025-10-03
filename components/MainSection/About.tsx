@@ -9,34 +9,28 @@ import Image from "next/image";
 const About = () => {
   const experience = [
     {
-      title: "Senior Frontend Developer",
-      company: "Tech Solutions Inc.",
-      period: "2022 - Present",
-      description:
-        "Lead frontend development for multiple client projects using React, TypeScript, and modern web technologies.",
-    },
-    {
-      title: "Full Stack Developer",
-      company: "Digital Agency Co.",
-      period: "2020 - 2022",
-      description:
-        "Developed and maintained web applications using MERN stack, collaborated with design teams to implement pixel-perfect UIs.",
-    },
-    {
-      title: "Junior Developer",
-      company: "StartUp Ventures",
-      period: "2019 - 2020",
-      description:
-        "Built responsive websites and web applications, gained experience in various frontend and backend technologies.",
+      title: "Frontend Developer",
+      company: "Bumps App",
+      period: "Jun-2022 to Aug-2025",
+      description: `Developed and maintained the Bumps App, a social networking platform, using Vue.js and Vuetify. 
+        Implemented responsive designs and optimized performance for a seamless user experience.
+        Collaborated with cross-functional teams to deliver high-quality features and improve user experience.`,
     },
   ];
   const skills = [
-    { name: "JavaScript", level: 90, color: "bg-yellow-500" },
-    { name: "React", level: 85, color: "bg-blue-500" },
-    { name: "Node.js", level: 80, color: "bg-green-500" },
-    { name: "Python", level: 75, color: "bg-blue-600" },
-    { name: "TypeScript", level: 85, color: "bg-blue-700" },
-    { name: "Next.js", level: 80, color: "bg-black" },
+    { name: "JavaScript", level: 65, color: "bg-yellow-500" },
+    { name: "TypeScript", level: 65, color: "bg-blue-700" },
+    { name: "Vue.js", level: 70, color: "bg-green-400" },
+    { name: "Nuxt.js", level: 70, color: "bg-green-600" },
+    { name: "Vuetify", level: 80, color: "bg-teal-400" },
+    { name: "React", level: 60, color: "bg-blue-500" },
+    { name: "Next.js", level: 60, color: "bg-black" },
+    { name: "Node.js", level: 50, color: "bg-green-500" },
+    { name: "Express.js", level: 50, color: "bg-gray-700" },
+    { name: "MongoDB", level: 55, color: "bg-green-800" },
+    { name: "HTML/CSS", level: 85, color: "bg-orange-500" },
+    { name: "Tailwind CSS", level: 50, color: "bg-green-700" },
+    // { name: "Python", level: 75, color: "bg-blue-600" },
   ];
 
   return (
@@ -104,9 +98,9 @@ const About = () => {
                 <div key={skill.name}>
                   <div className="flex justify-between mb-2">
                     <span className="font-medium">{skill.name}</span>
-                    <span className="text-sm text-gray-600 dark:text-gray-400">
+                    {/* <span className="text-sm text-gray-600 dark:text-gray-400">
                       {skill.level}%
-                    </span>
+                    </span> */}
                   </div>
                   <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                     <div

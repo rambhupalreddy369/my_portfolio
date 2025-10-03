@@ -36,14 +36,23 @@ const projects = [
   //   githubUrl: "#",
   // },
   {
-    id: 3,
-    title: "Weather Dashboard",
+    id: 1,
+    title: "Bumps App",
     description:
-      "A responsive weather dashboard that displays current weather conditions and forecasts for multiple cities with beautiful data visualizations.",
+      "A social networking platform developed using Nuxt.js, Vue.js and Vuetify, focusing on user engagement and seamless interaction. Implemented responsive designs and optimized performance for a seamless user experience. Collaborated with cross-functional teams to deliver high-quality features and improve user experience.  ",
     image:
       "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=600",
-    technologies: ["JavaScript", "Chart.js", "OpenWeather API"],
-    liveUrl: "#",
+    technologies: [
+      "Nuxt.js",
+      "Vue Js",
+      "Vuetify",
+      "Vuex",
+      "JavaScript",
+      "Google Maps API",
+      "Firebase",
+      "Vastunario 2D force-graph",
+    ],
+    liveUrl: "https://bumpsapp.com/",
     githubUrl: "#",
   },
 ];
@@ -99,12 +108,12 @@ const Projects = () => {
                         Live Demo
                       </a>
                     </Button>
-                    <Button size="sm" variant="outline" asChild>
+                    {/* <Button size="sm" variant="outline" asChild>
                       <a href={project.githubUrl}>
                         <Github className="w-4 h-4 mr-2" />
                         Source Code
                       </a>
-                    </Button>
+                    </Button> */}
                   </div>
                 </CardContent>
               </div>

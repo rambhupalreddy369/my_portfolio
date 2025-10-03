@@ -52,7 +52,7 @@ const projects = [
       "Firebase",
       "Vastunario 2D force-graph",
     ],
-    liveUrl: "https://bumpsapp.com/",
+    liveUrl: "https://bumps.app.com/",
     githubUrl: "#",
   },
 ];
@@ -103,7 +103,7 @@ const Projects = () => {
                   </div>
                   <div className="flex gap-4">
                     <Button size="sm" asChild>
-                      <a href={project.liveUrl}>
+                      <a href={project.liveUrl} target="_blank">
                         <ExternalLink className="w-4 h-4 mr-2" />
                         Live Demo
                       </a>

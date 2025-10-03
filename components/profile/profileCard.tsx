@@ -16,14 +16,14 @@ export default function ProfileCard({
   highlightLinks = [],
 }: ProfileCardProps) {
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
-      <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-md p-8 max-w-2xl w-full text-center transition-colors duration-300">
+    <div className="flex justify-center items-center bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+      <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-md p-8 w-full text-center transition-colors duration-300">
         {/* Profile Image */}
-        <div className="flex justify-center -mt-20">
+        <div className="flex justify-center -mt-28">
           <Image
             src={image}
             alt={name}
-            className="w-28 h-28 rounded-full border-4 border-white dark:border-gray-800 shadow-md object-cover"
+            className="w-40 h-40 rounded-full border-4 border-white dark:border-gray-800 shadow-md object-cover"
           />
         </div>
 

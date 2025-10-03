@@ -35,20 +35,23 @@ const About = () => {
 
   return (
     <div>
-      {/* <ProfileCard
-        name="Rambhupal Reddy"
-        image=""
-        description="Hi! I’m a Senior Developer with more than ten years of experience working in mobile banking apps."
-        resumeLink="/resume-daniel.pdf"
+      <div className="space-y-8 mt-20">
+        <ProfileCard
+          name="Rambhupal Reddy"
+          image=""
+          description="Iam a passionate full-stack developer with 3+ years of
+                experience creating beautiful, functional, and user-centered
+                digital experiences. I love solving complex problems and
+                learning new technologies."
+          resumeLink="/resume.pdf"
 
-        // highlightLinks={[
-        //   { label: "latest projects", href: "/projects" },
-        //   { label: "case studies", href: "/case-studies" },
-        // ]}
-      ></ProfileCard> */}
-      <div className="space-y-8">
+          // highlightLinks={[
+          //   { label: "latest projects", href: "/projects" },
+          //   { label: "case studies", href: "/case-studies" },
+          // ]}
+        ></ProfileCard>
         {/* Hero Section */}
-        <div className="text-center lg:text-left">
+        {/* <div className="text-center lg:text-left">
           <div className="flex flex-col lg:flex-col items-center gap-8">
             <div className="flex-shrink-0">
               <Image
@@ -82,7 +85,7 @@ const About = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Skills Section */}
         <Card>

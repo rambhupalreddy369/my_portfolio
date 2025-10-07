@@ -7,6 +7,30 @@ import { Textarea } from "@/components/ui/textarea";
 import { Send } from "lucide-react";
 
 const Contact = () => {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      subject: formData.get("subject"),
+      message: formData.get("message"),
+    };
+    console.log(data);
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+    
+    if (res.ok) {
+      alert("Message sent successfully!");
+    } else {
+      alert("Something went wrong, please try again.");
+    }
+  }
+
   return (
     <div className="space-y-8">
       <div className="text-center">
@@ -65,7 +89,7 @@ const Contact = () => {
             <CardTitle>Send Message</CardTitle>
           </CardHeader>
           <CardContent>
-            <form className="space-y-4">
+            <form className="space-y-4" onSubmit={handleSubmit}>
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium mb-2">Name</label>
@@ -104,7 +128,10 @@ const Contact = () => {
                   className="dark:bg-[#273248] dark:border-[#273248] "
                 />
               </div>
-              <Button className="w-full bg-blue-600 hover:bg-blue-700">
+              <Button
+                className="w-full bg-blue-600 hover:bg-blue-700"
+                type="submit"
+              >
                 <Send className="w-4 h-4 mr-2" />
                 Send Message
               </Button>

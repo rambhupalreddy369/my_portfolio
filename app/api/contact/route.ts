@@ -7,7 +7,7 @@ export async function POST(req: Request) {
   const { name, email, subject, message } = await req.json();
   try {
     const transporter = nodemailer.createTransport({
-      host: process.env.BREVO_SMTP_SERVER,
+      host: "smtp-relay.brevo.com",
       port: 587,
       secure: false, // true for 465, false for other ports
       auth: {

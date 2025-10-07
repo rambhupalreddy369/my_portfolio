@@ -17,7 +17,6 @@ const Contact = () => {
       subject: formData.get("subject"),
       message: formData.get("message"),
     };
-    console.log(data);
     const res = await fetch("/api/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -94,6 +93,7 @@ const Contact = () => {
                 <div>
                   <label className="block text-sm font-medium mb-2">Name</label>
                   <Input
+                    name="name"
                     placeholder="Your name"
                     className="dark:bg-[#273248] dark:border-[#273248]"
                   />
@@ -103,6 +103,7 @@ const Contact = () => {
                     Email
                   </label>
                   <Input
+                    name="email"
                     type="email"
                     placeholder="your.email@example.com"
                     className="dark:bg-[#273248] dark:border-[#273248]"
@@ -114,6 +115,7 @@ const Contact = () => {
                   Subject
                 </label>
                 <Input
+                  name="subject"
                   placeholder="Message subject"
                   className="dark:bg-[#273248] dark:border-[#273248] focus:outline-none focus:ring-0 focus:border-transparent"
                 />
@@ -123,6 +125,7 @@ const Contact = () => {
                   Message
                 </label>
                 <Textarea
+                  name="message"
                   placeholder="Your message..."
                   rows={5}
                   className="dark:bg-[#273248] dark:border-[#273248] "

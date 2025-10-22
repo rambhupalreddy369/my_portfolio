@@ -22,7 +22,7 @@ const Contact = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     });
-    
+
     if (res.ok) {
       alert("Message sent successfully!");
     } else {
@@ -132,7 +132,7 @@ const Contact = () => {
                 />
               </div>
               <Button
-                className="w-full bg-blue-600 hover:bg-blue-700"
+                className="w-full bg-[#465981] hover:bg-blue-700"
                 type="submit"
               >
                 <Send className="w-4 h-4 mr-2" />

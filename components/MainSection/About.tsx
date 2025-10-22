@@ -51,6 +51,17 @@ const About = () => {
           // ]}
         ></ProfileCard>
         {/* Hero Section */}
+        <div className="bg-[#162235] rounded-2xl p-6 text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+          <div className="text-4xl mb-4">💻</div>
+          <h3 className="text-lg font-semibold mb-2">Featured Projects</h3>
+          <p className="text-gray-400 text-sm mb-4">
+            Worked on multiple real-world projects involving data visualization,
+            collaboration tools, and graph-based systems.
+          </p>
+          <button className="mt-2 bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded-full text-sm font-medium">
+            View Projects →
+          </button>
+        </div>
         {/* <div className="text-center lg:text-left">
           <div className="flex flex-col lg:flex-col items-center gap-8">
             <div className="flex-shrink-0">
@@ -88,7 +99,7 @@ const About = () => {
         </div> */}
 
         {/* Skills Section */}
-        <Card>
+        {/* <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Code className="w-5 h-5" />
@@ -101,9 +112,9 @@ const About = () => {
                 <div key={skill.name}>
                   <div className="flex justify-between mb-2">
                     <span className="font-medium">{skill.name}</span>
-                    {/* <span className="text-sm text-gray-600 dark:text-gray-400">
+                    <span className="text-sm text-gray-600 dark:text-gray-400">
                       {skill.level}%
-                    </span> */}
+                    </span>
                   </div>
                   <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                     <div
@@ -115,7 +126,7 @@ const About = () => {
               ))}
             </div>
           </CardContent>
-        </Card>
+        </Card> */}
 
         {/* Experience Section */}
         <Card>

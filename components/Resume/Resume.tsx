@@ -7,6 +7,7 @@ import SoftSkills from "./SoftSkills";
 import Projects from "./Projects";
 import Education from "./Education";
 import Languages from "./Languages";
+import { ExperienceDetails } from "@/utils/constants/experience";
 
 export default function Home() {
   return (
@@ -36,25 +37,27 @@ export default function Home() {
             and Agile development, with a focus on developing technology-driven solutions that address complex real-world challenges."
             />
             <hr className="my-6 border-gray-300 dark:border-gray-700" />
-            <WorkExperience
-              experiences={
-                [
-                  // {
-                  //   period: "2023 - Present",
-                  //   company: "Google",
-                  //   role: "Tech Lead",
-                  //   details: [
-                  //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean porta est diam, et blandit ipsum suscipit facilisis.",
-                  //     "Vivamus accumsan purus at urna tincidunt convallis. Sed nisi dolor, elementum eget tempus ac, blandit ac mi. Aliquam id tellus ut arcu luctus accumsan in at odio.",
-                  //   ],
-                  // },
-                ]
-              }
-            />
+            <WorkExperience experiences={ExperienceDetails} />
           </div>
           <div className="w-full md:w-1/3 space-y-6">
             <TechStack
-              skills={["JavaScript", "ReactJS", "Python", "MongoDB"]}
+              skills={[
+                "JavaScript",
+                "VueJs",
+                "ReactJS",
+                "NuxtJs",
+                "NextJs",
+                "Vuetify",
+                "Vuex",
+                "Redux",
+                "NodeJs",
+                "ExpressJs",
+                "Bootstrap",
+                "Tailwind CSS",
+                "MongoDB",
+                "Firebase",
+                "HTML/CSS",
+              ]}
             />
             <hr className="my-6 border-gray-300 dark:border-gray-700" />
             <SoftSkills
@@ -69,13 +72,16 @@ export default function Home() {
             />
             <hr className="my-6 border-gray-300 dark:border-gray-700" />
 
-            <Projects projects={["Project lorem Ipsum"]} />
+            <Projects />
             <hr className="my-6 border-gray-300 dark:border-gray-700" />
 
             <Education
               degrees={[
-                "MSc in Computer Science, Oxford University, 2016 - 2017",
-                "BSc Maths and Physics, University of California, Berkeley, 2012 - 2016",
+                {
+                  name: "B.Tech in Mechanical Engineering",
+                  institution: "JNTU Hyderabad",
+                  year: "2012 - 2016",
+                },
               ]}
             />
             <hr className="my-6 border-gray-300 dark:border-gray-700" />

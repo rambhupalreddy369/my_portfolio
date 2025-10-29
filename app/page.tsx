@@ -12,10 +12,9 @@ import Home from "@/components/Resume/Resume";
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("about");
-  const [isSidebarOpen, setSidebarOpen] = useState(false);
+  const [isSidebarOpen, setSidebarOpen] = useState(true);
 
   const renderContent = () => {
-    console.log(activeSection);
     switch (activeSection) {
       case "about":
         return <About></About>;

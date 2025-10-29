@@ -61,14 +61,12 @@ export default function Home() {
             />
             <hr className="my-6 border-gray-300 dark:border-gray-700" />
             <SoftSkills
-              skills={
-                [
-                  // "Leadership",
-                  // "Project Management",
-                  // "DevOps",
-                  // "Public Speaking",
-                ]
-              }
+              skills={[
+                "Leadership",
+                "Project Management",
+                // "DevOps",
+                // "Public Speaking",
+              ]}
             />
             <hr className="my-6 border-gray-300 dark:border-gray-700" />
 
@@ -86,7 +84,7 @@ export default function Home() {
             />
             <hr className="my-6 border-gray-300 dark:border-gray-700" />
 
-            <Languages languages={["English", "Spanish"]} />
+            <Languages languages={["English", "Hindi", "Telugu"]} />
           </div>
         </div>
       </div>

@@ -51,15 +51,8 @@ export default function SidebarMenu({
   };
   return (
     <div className="relative min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors">
-      {/* Sidebar for desktop */}
-      {/* {isOpen && (
-        <div
-          className="fixed inset-0 bg-black/50 z-40"
-          onClick={closeSidebar}
-        />
-      )} */}
       <div
-        className={`fixed z-50 top-1/2 transform -translate-y-1/2 ml-5 bg-white transition-all duration-300 dark:bg-[#171c29] 
+        className={`fixed z-50 top-1/2 transform -translate-y-1/2 ml-5 bg-white transition-all duration-300 dark:bg-[#171c29] hidden md:block
           dark:text-gray-100 ${
             isOpen
               ? "opacity-100 scale-100"
@@ -92,22 +85,24 @@ export default function SidebarMenu({
       </div>
 
       {/* Footer menu for mobile */}
-      <footer className="fixed bottom-0 left-0 w-full bg-white dark:bg-gray-800 shadow-inner flex justify-around items-center py-3 md:hidden">
-        {menuItems.map((item, idx) => (
-          <a
-            key={idx}
-            onClick={() => handleClick(item.id)}
-            className={`flex flex-col items-center text-xs font-semibold transition ${
-              activeId === item.id
-                ? "text-red-500"
-                : "text-gray-700 dark:text-gray-200 hover:text-red-400"
-            }`}
-          >
-            {item.icon}
-            {item.label}
-          </a>
-        ))}
-      </footer>
+      {isOpen && (
+        <footer className="fixed bottom-0 left-0 w-full bg-white dark:bg-gray-800 shadow-inner flex justify-around items-center py-3 md:hidden">
+          {menuItems.map((item, idx) => (
+            <a
+              key={idx}
+              onClick={() => handleClick(item.id)}
+              className={`flex flex-col items-center text-xs font-semibold transition ${
+                activeId === item.id
+                  ? "text-red-500"
+                  : "text-gray-700 dark:text-gray-200 hover:text-red-400"
+              }`}
+            >
+              {item.icon}
+              {item.label}
+            </a>
+          ))}
+        </footer>
+      )}
     </div>
   );
 }

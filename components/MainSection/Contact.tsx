@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Send } from "lucide-react";
+import { Send, Github, Linkedin } from "lucide-react";
+import { FaXTwitter, FaStackOverflow, FaMedium } from "react-icons/fa6";
 
 const Contact = () => {
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -41,7 +42,21 @@ const Contact = () => {
           as possible.
         </p>
       </div>
-
+      <div className="flex md:hidden items-center justify-center gap-4 mt-4">
+        <SocialIcon
+          href="#"
+          icon={<FaXTwitter size={18} />}
+          tooltip="Twitter"
+        />
+        <SocialIcon href="#" icon={<Github size={18} />} tooltip="Github" />
+        <SocialIcon href="#" icon={<Linkedin size={18} />} tooltip="LinkedIn" />
+        <SocialIcon
+          href="#"
+          icon={<FaStackOverflow size={18} />}
+          tooltip="Stack Overflow"
+        />
+        <SocialIcon href="#" icon={<FaMedium size={18} />} tooltip="Medium" />
+      </div>
       <div className="">
         {/* <Card>
           <CardHeader>
@@ -144,6 +159,41 @@ const Contact = () => {
       </div>
     </div>
   );
+  function SocialIcon({
+    href,
+    icon,
+    tooltip,
+  }: {
+    href: string;
+    icon: React.ReactNode;
+    tooltip?: string;
+  }) {
+    return (
+      <div className="relative group inline-block">
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-10 h-10 flex items-center justify-center rounded-full 
+                     bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 
+                     shadow hover:shadow-md transition"
+        >
+          {icon}
+        </a>
+
+        {/* Tooltip */}
+        <span
+          className="absolute top-full mb-2 mt-2 left-1/2 -translate-x-1/2 
+                     opacity-0 group-hover:opacity-100 
+                     bg-gray-800 text-white text-xs rounded-md 
+                     px-2 py-1 transition-all duration-300 
+                     whitespace-nowrap pointer-events-none"
+        >
+          {tooltip}
+        </span>
+      </div>
+    );
+  }
 };
 
 export default Contact;

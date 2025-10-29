@@ -58,7 +58,7 @@ export default function Header({
       </div>
 
       {/* Center Section - Social Icons */}
-      <div className="flex items-center gap-4">
+      <div className="hidden md:flex items-center gap-4">
         <SocialIcon
           href="#"
           icon={<FaXTwitter size={18} />}

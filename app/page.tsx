@@ -8,7 +8,7 @@ import Projects from "@/components/MainSection/Projects";
 import BlogPosts from "@/components/MainSection/BlogPosts";
 // import Resume from "@/components/MainSection/Resume";
 import Contact from "@/components/MainSection/Contact";
-import Home from "@/components/Resume/Resume";
+import Resume from "@/components/Resume/Resume";
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("about");
@@ -26,10 +26,18 @@ export default function Portfolio() {
         return <BlogPosts></BlogPosts>;
 
       case "resume":
-        return <Home></Home>;
+        return (
+          <div className="mt-20">
+            <Resume></Resume>
+          </div>
+        );
 
       case "contact":
-        return <Contact></Contact>;
+        return (
+          <div className="mt-20">
+            <Contact></Contact>
+          </div>
+        );
 
       default:
         return null;

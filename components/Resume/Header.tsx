@@ -14,16 +14,17 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ name, title, contact }) => {
   return (
-    <div className="text-center mb-8">
-      <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 border-4 border-blue-500 shadow-lg">
+    <div className="text-center mb-8 ">
+      <div className="flex justify-center -mt-28">
         <Image
-          src="/profile.jpg"
+          src="/images/portfolio_pic.png"
           alt="Profile"
           width={96}
           height={96}
-          className="object-cover"
+          className="w-40 h-40 rounded-full shadow-md object-cover mb-4 border-4 border-white dark:border-gray-800"
         />
       </div>
+
       <h1 className="text-2xl md:text-3xl font-bold text-custom-text dark:text-white mb-1">
         {name}
       </h1>

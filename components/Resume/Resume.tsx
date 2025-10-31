@@ -11,7 +11,7 @@ import { ExperienceDetails } from "@/utils/constants/experience";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white text-gray-800 font-sans dark:bg-[#1e2738]">
+    <div className="min-h-screen bg-white text-gray-800 font-sans dark:bg-[#1e2738] rounded-lg shadow-md transition-colors duration-300">
       <Head>
         <title>Rambhupal - Resume</title>
         <meta name="description" content="Rambhupal Reddy's Resume" />

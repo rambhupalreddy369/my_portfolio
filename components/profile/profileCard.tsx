@@ -21,7 +21,9 @@ export default function ProfileCard({
         {/* Profile Image */}
         <div className="flex justify-center -mt-28">
           <Image
-            src={image}
+            src="/images/portfolio_pic.png"
+            width={100}
+            height={100}
             alt={name}
             className="w-40 h-40 rounded-full border-4 border-white dark:border-gray-800 shadow-md object-cover"
           />
